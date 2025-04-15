@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="hud">
+            <div class="health-bar">
+                <div class="health-fill"></div>
+                <span class="health-text">100/100</span>
+            </div>
+            <div class="score-level">
+                <div class="score">Score: <span id="score">0</span></div>
+                <div class="level">Level: <span id="level">1</span></div>
+            </div>
+            <div class="upgrades">
+                <div class="upgrade">Bullets: <span id="bullet-type">Single</span></div>
+                <div class="upgrade">Damage: <span id="damage">10</span></div>
+                <div class="upgrade">Regen: <span id="regen">1</span> HP/s</div>
+            </div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div id="gameOver" class="game-over hidden">
+            <h2>Game Over</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button id="restartButton">Play Again</button>
+        </div>
+        <div id="startScreen" class="start-screen">
+            <h1>Space Shooter</h1>
+            <p>Use arrow keys or WASD to move</p>
+            <p>Space to shoot (hold for auto-fire)</p>
+            <div class="ship-selection">
+                <h3>Choose Your Ship</h3>
+                <div class="ships-container">
+                    <div class="ship-option selected" data-ship="fighter">
+                        <div class="ship-preview fighter"></div>
+                        <h4>Fighter</h4>
+                        <p>Balanced</p>
+                        <ul>
+                            <li>Speed: ★★★☆☆</li>
+                            <li>Health: ★★★☆☆</li>
+                            <li>Damage: ★★★☆☆</li>
+                        </ul>
+                    </div>
+                    <div class="ship-option" data-ship="scout">
+                        <div class="ship-preview scout"></div>
+                        <h4>Scout</h4>
+                        <p>Fast & Agile</p>
+                        <ul>
+                            <li>Speed: ★★★★★</li>
+                            <li>Health: ★★☆☆☆</li>
+                            <li>Damage: ★★☆☆☆</li>
+                        </ul>
+                    </div>
+                    <div class="ship-option" data-ship="tank">
+                        <div class="ship-preview tank"></div>
+                        <h4>Tank</h4>
+                        <p>Heavy & Powerful</p>
+                        <ul>
+                            <li>Speed: ★★☆☆☆</li>
+                            <li>Health: ★★★★★</li>
+                            <li>Damage: ★★★★☆</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button id="startButton">Start Game</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
